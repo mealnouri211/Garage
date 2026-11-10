@@ -91,10 +91,10 @@
     { id: 'ppf',     type: 'service', img: 'assets/categories/ppf.jpg', name: { ar: 'باقات حماية السيارات', en: 'Car Protection Packages' } },
     { id: 'wheels',  type: 'service', img: 'assets/categories/wheels.jpg', name: { ar: 'حماية الرنقات', en: 'Wheel Protection' } },
     { id: 'glass',   type: 'service', img: 'assets/categories/glass.jpg', name: { ar: 'حماية الزجاج الأمامي', en: 'Windshield Protection' } },
-    { id: 'paint',   type: 'service', img: 'assets/logo-transparent.png', logo: true, name: { ar: 'الصبغ والحدادة', en: 'Paint & Bodywork' } },
+    { id: 'paint',   type: 'service', name: { ar: 'الصبغ والحدادة', en: 'Paint & Bodywork' } },
     { id: 'dashcam', type: 'part', img: 'assets/categories/dashcam.jpg',    name: { ar: 'داش كام', en: 'Dash Cams' } },
     { id: 'elec',    type: 'service', img: 'assets/categories/elec.jpg', name: { ar: 'كهرباء وبرمجة السيارات', en: 'Car Electrical & Programming' } },
-    { id: 'maint',   type: 'service', img: 'assets/logo-transparent.png', logo: true, name: { ar: 'صيانة السيارات', en: 'Car Maintenance' } }
+    { id: 'maint',   type: 'service', name: { ar: 'صيانة السيارات', en: 'Car Maintenance' } }
   ];
   const CAT_TYPE = Object.fromEntries(CATS.map((c) => [c.id, c.type]));
 

@@ -132,5 +132,6 @@
     location.href = 'cart.html';
   }
 
+  document.body.classList.add('is-product');
   HW.boot(render);
 })();

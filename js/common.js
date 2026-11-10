@@ -27,9 +27,11 @@
   function updateCount() { const el = $('#cartCount'); if (el) el.textContent = HW.cart.reduce((s, i) => s + i.qty, 0); }
 
   /* ---- shared components ---- */
-  const PH_SVG = '<svg viewBox="0 0 64 32" aria-hidden="true"><path d="M4 22c2-8 10-14 28-14s26 6 28 14"/><rect x="2" y="22" width="60" height="5" rx="2.5"/></svg>';
-  // Placeholder image box. Pass a real image path (img) to replace the placeholder.
-  HW.ph = (img, alt = '') => `<div class="ph">${PH_SVG}${img ? `<img src="${img}" alt="${alt}" loading="lazy">` : ''}</div>`;
+  // Image box. With no image, shows the company logo as the placeholder.
+  // Pass a real image path (img) to replace it.
+  HW.ph = (img, alt = '') => (img
+    ? `<div class="ph"><img src="${img}" alt="${alt}" loading="lazy" decoding="async"></div>`
+    : '<div class="ph"><img class="ph__logo" src="assets/logo-transparent.png" alt="" loading="lazy" decoding="async"></div>');
 
   // Price block: current price, plus the crossed-out old price when discounted.
   HW.priceHtml = (p, label = true) => `<div class="price">${p.groups.length && label ? `<small>${HW.t('from')}</small>` : ''}${p.was ? `<s class="was">${HW.money(p.was)}</s>` : ''}${HW.money(HW.fromPrice(p))}</div>`;
@@ -132,6 +134,7 @@
     $('#themeBtn').addEventListener('click', () => {
       const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
       document.documentElement.dataset.theme = next; store.set('hw_theme', next);
+      const meta = document.querySelector('meta[name=theme-color]'); if (meta) meta.content = next === 'light' ? '#faf8f3' : '#0a0a0b';
     });
     $('#menuBtn').addEventListener('click', () => $('#nav').classList.toggle('open'));
     updateCount();
@@ -148,7 +151,7 @@
     const p = HW.findProduct(it.pid);
     const when = it.date ? `<small>📅 ${HW.whenText(it)}</small>` : '';
     return `<div class="line" data-key="${it.key}">${HW.ph(p.img)}
-      <div><h4><a href="${HW.productUrl(p.id)}">${HW.L(p.name)}</a>${it.qty > 1 ? ` × ${it.qty}` : ''}</h4><small>${HW.optionsText(it)}</small>${when}
+      <div><h4><a href="${HW.productUrl(p.id)}">${HW.L(p.name)}</a>${it.qty > 1 && !editable ? ` × ${it.qty}` : ''}</h4><small>${HW.optionsText(it)}</small>${when}
         ${editable && p.type === 'part' ? `<div class="qty qty--sm"><button type="button" data-q="-1" aria-label="-">−</button><span>${it.qty}</span><button type="button" data-q="1" aria-label="+">+</button></div>` : ''}</div>
       <div class="line__side"><span class="price">${HW.money(HW.lineTotal(it))}</span>${editable ? `<button class="line__rm" data-rm="${it.key}">${HW.t('remove')}</button>` : ''}</div></div>`;
   };
