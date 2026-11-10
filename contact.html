@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HeroWorks | هيرو ووركس</title>
+  <meta name="description" content="HeroWorks garage: car wash, polishing, paint protection, window tint, parts and modifications. Book online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script>(function(){try{var t=JSON.parse(localStorage.getItem('hw_theme'))||'dark';document.documentElement.dataset.theme=t==='light'?'light':'dark'}catch(e){document.documentElement.dataset.theme='dark'}})();</script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contact" data-title="nav_contact">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-hero"><div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html" data-i18n="home">الرئيسية</a><span>/</span><span data-i18n="contact_title"></span></nav>
+      <h1 data-i18n="contact_title"></h1><p data-i18n="contact_page_sub"></p>
+    </div></section>
+    <section class="section">
+      <div class="container contact">
+        <div>
+          <h2 data-i18n="about_t"></h2>
+          <p class="muted" data-i18n="about_p"></p>
+          <ul class="contact__list">
+            <li><b data-i18n="c_hours_l"></b><span data-i18n="c_hours"></span></li>
+            <li><b data-i18n="c_loc_l"></b><span data-i18n="c_loc"></span></li>
+            <li><b data-i18n="c_phone_l"></b><a href="tel:+96597409444" dir="ltr">+965 9740 9444</a></li>
+          </ul>
+          <div class="contact__actions">
+            <a class="btn btn--gold" href="tel:+96597409444" data-i18n="call_us"></a>
+            <a class="btn btn--ghost" href="https://wa.me/96597409444" target="_blank" rel="noopener" data-i18n="wa_us"></a>
+          </div>
+          <div class="map-card">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 0 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <strong data-i18n="map_t"></strong>
+            <a class="btn btn--gold" href="https://share.google/Ku4thjJLSHbP2YOTP" target="_blank" rel="noopener" data-i18n="open_maps"></a>
+          </div>
+        </div>
+        <form class="panel" id="contactForm" novalidate>
+          <h2 data-i18n="msg_t"></h2>
+          <div class="field"><label for="cName" data-i18n="f_name"></label><input id="cName" autocomplete="name"></div>
+          <div class="field"><label for="cPhone" data-i18n="f_phone"></label><input id="cPhone" type="tel" dir="ltr" autocomplete="tel"></div>
+          <div class="field"><label for="cMsg" data-i18n="f_msg"></label><textarea id="cMsg" rows="5"></textarea></div>
+          <button class="btn btn--gold btn--block" type="submit" data-i18n="send_wa"></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
