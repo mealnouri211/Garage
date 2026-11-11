@@ -497,3 +497,6 @@ button,.btn,.chip,.slot,.opt{touch-action:manipulation}
   .lang-btn{width:auto}
 }
 .qty[hidden],[hidden]{display:none !important}
+
+/* Mobile: call/WhatsApp buttons sit on the right in English and on the left in Arabic, so they cover less content */
+@media (max-width:760px){.fab{inset-inline-start:auto;inset-inline-end:16px}}
